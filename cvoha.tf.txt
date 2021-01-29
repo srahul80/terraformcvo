@@ -1,0 +1,35 @@
+provider "netapp-cloudmanager" {
+  refresh_token         = var.token
+}
+resource "netapp-cloudmanager_cvo_aws" "cvo-aws" {
+  provider = netapp-cloudmanager
+  name = "TerraformCVO"
+  region = "us-east-1"
+  vpc_id = "vpc-04cb3b4d840f51fcssccv"
+  aws_tag {
+              tag_key = "instancetype"
+              tag_value = "POC"
+            }
+  aws_tag {
+              tag_key = "location"
+              tag_value = "US"
+            }
+  svm_password = "Password!1234"
+  client_id = "C40nTm6dyuGe0j3AIXuHyfIFq6Y72avvssv"
+  is_ha = true
+  failover_mode = "FloatingIP"
+  node1_subnet_id = "subnet-02ed5a13bxxxx"
+  node2_subnet_id = "subnet-0bb77ce3axxxxx"
+  mediator_subnet_id = "subnet-09af6a8df0bxxxx"
+  mediator_key_pair_name = "rahul_aws_keys"
+  cluster_floating_ip = "172.16.10.1"
+  data_floating_ip = "172.16.10.2"
+  data_floating_ip2 = "172.16.10.3"
+  svm_floating_ip = "172.16.10.4"
+  route_table_ids = ["rtb-093bad6dc6b5ffxxx"]
+  platform_serial_number_node1 =””
+  platform_serial_number_node2= “”
+  license_type= ha-cot-premium-byol
+
+}
+

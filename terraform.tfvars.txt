@@ -1,0 +1,5 @@
+token= "0ztJQYU4_1l0EQOwCMtVxOoqXqcQXACIZ-GWNRrxxxOHv5yoxxx"
+subnetid= "subnet-0490bb167420c4a3axxxx"
+security_group= "sg-020bc2d3a82193d04xxxx"
+region= "us-east-1"
+account = "account-IRYzHjPoxxxx"
